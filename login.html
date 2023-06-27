@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+</head>
+<link rel="stylesheet" href="register.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<body>
+	<div class="container">
+		<h1 class="text-center">Simple Auto Dynamic Input Field Using Jquery </h1>
+
+		<div class="row ">
+			<div class="col-12 col-md-6 col-xl-6 col-lg-6 mx-auto mt-5">
+			  <div class="card h-100">
+				<div class="card-body">
+				      <h5 class="card-title text-cneter"><button class="btn btn-info">Dynamically Add Your Input Field</button></h5>
+						<table class="table table-bordered" id="table">
+								<tr>
+									<th>Name</th>
+									<th>Action</th>
+								</tr>
+								<tr>
+									<td><input type="text" name="inputs[0][name]" class="form-control" placeholder="Please Enter your name"></td>
+									<td><button type="button" style="background-color: #e7e71f;border-radius: 11px;width: 96px;padding: 6px;font-weight: bolder;color: white;border: 1px solid white;" id="add">ADD</button></td>
+								</tr>
+						</table>	
+				</div>			
+			  </div>
+			</div>
+		</div>
+
+		<script>
+		
+		var i =0;
+			$("#add").click(function(){
+				++i;
+				$("#table").append(
+				    ` <tr>
+									<td><input type="text" name="inputs[`+i+`][name]" class="form-control" placeholder="Please Enter your name"></td>
+									<td><button type="button" style="background-color:red;border-radius:10px; color:white; margin-left:15px; width:96px padding:6px" id="remove">Remove</button></td>
+						</tr>`);
+			});
+
+			//remove button
+			$(document).on('click',"#remove", function(){
+				$(this).parents('tr').remove();
+			})
+		</script>
+
+
+
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
